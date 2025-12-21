@@ -13,80 +13,84 @@ import {
 
 export const CallToAction = () => {
   return (
-    <section className="py-20 gradient-hero">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 gradient-hero pattern-paisley relative overflow-hidden">
+      {/* Decorative border */}
+      <div className="absolute inset-8 border-4 border-dashed border-foreground/20 pointer-events-none" />
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Main CTA Card */}
-        <Card className="gradient-card shadow-elevated border-0 max-w-4xl mx-auto">
+        <Card className="bg-card border-4 border-foreground shadow-elevated max-w-4xl mx-auto">
           <CardContent className="p-8 md:p-12 text-center">
             
             {/* Badge */}
-            <div className="inline-flex items-center px-4 py-2 bg-primary/10 rounded-full text-primary mb-6">
-              <Trophy className="w-4 h-4 mr-2" />
-              <span className="text-sm font-medium">Join 1000+ Groups Already Splitting Smart</span>
+            <div className="inline-flex items-center px-6 py-3 bg-primary/20 border-2 border-foreground text-foreground mb-8">
+              <Trophy className="w-5 h-5 mr-2 text-primary" />
+              <span className="font-retro text-lg">★ JOIN 1000+ GROUPS ★</span>
+              <Trophy className="w-5 h-5 ml-2 text-primary" />
             </div>
             
             {/* Headline */}
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              Ready to End Money Drama
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-pixel text-foreground mb-8 leading-relaxed">
+              READY TO END
               <br />
-              <span className="text-primary">In Your Squad?</span>
+              <span className="text-primary drop-shadow-[3px_3px_0_hsl(var(--foreground)/0.3)]">MONEY DRAMA?</span>
             </h2>
             
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Join thousands of college groups who've ditched awkward money conversations. 
-              Start tracking, splitting, and settling expenses like a pro.
+            <p className="text-xl font-retro text-muted-foreground mb-10 max-w-2xl mx-auto">
+              JOIN THOUSANDS OF COLLEGE GROUPS WHO'VE DITCHED AWKWARD MONEY TALKS. 
+              START TRACKING, SPLITTING, AND SETTLING LIKE A PRO.
             </p>
             
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Button size="lg" className="gradient-primary hover-lift text-lg px-8 py-6">
+              <Button size="lg" className="gradient-primary border-4 border-foreground shadow-card hover-lift font-retro text-lg px-8 py-6">
                 <Users className="w-5 h-5 mr-2" />
-                Create Your First Group
+                CREATE FIRST GROUP
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
               
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="text-foreground border-border hover:bg-muted/50 text-lg px-8 py-6"
+                className="bg-background text-foreground border-4 border-foreground hover:bg-muted shadow-card hover-lift font-retro text-lg px-8 py-6"
               >
-                See Demo First
+                SEE DEMO FIRST
               </Button>
             </div>
             
             {/* Features Grid */}
-            <div className="grid md:grid-cols-4 gap-6">
-              <div className="text-center">
-                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-3">
-                  <Zap className="w-6 h-6 text-primary" />
+            <div className="grid md:grid-cols-4 gap-4">
+              <div className="p-4 bg-primary/10 border-2 border-foreground">
+                <div className="w-12 h-12 bg-primary border-2 border-foreground flex items-center justify-center mx-auto mb-3">
+                  <Zap className="w-6 h-6 text-primary-foreground" />
                 </div>
-                <h3 className="font-semibold text-foreground mb-1">Instant Setup</h3>
-                <p className="text-sm text-muted-foreground">Get started in under 2 minutes</p>
+                <h3 className="font-retro text-lg text-foreground mb-1">INSTANT</h3>
+                <p className="font-retro text-sm text-muted-foreground">2 MIN SETUP</p>
               </div>
               
-              <div className="text-center">
-                <div className="w-12 h-12 bg-success/10 rounded-xl flex items-center justify-center mx-auto mb-3">
-                  <Smartphone className="w-6 h-6 text-success" />
+              <div className="p-4 bg-success/10 border-2 border-foreground">
+                <div className="w-12 h-12 bg-success border-2 border-foreground flex items-center justify-center mx-auto mb-3">
+                  <Smartphone className="w-6 h-6 text-success-foreground" />
                 </div>
-                <h3 className="font-semibold text-foreground mb-1">UPI Ready</h3>
-                <p className="text-sm text-muted-foreground">Direct payment integration</p>
+                <h3 className="font-retro text-lg text-foreground mb-1">UPI READY</h3>
+                <p className="font-retro text-sm text-muted-foreground">DIRECT PAY</p>
               </div>
               
-              <div className="text-center">
-                <div className="w-12 h-12 bg-warning/10 rounded-xl flex items-center justify-center mx-auto mb-3">
-                  <Shield className="w-6 h-6 text-warning" />
+              <div className="p-4 bg-warning/10 border-2 border-foreground">
+                <div className="w-12 h-12 bg-warning border-2 border-foreground flex items-center justify-center mx-auto mb-3">
+                  <Shield className="w-6 h-6 text-warning-foreground" />
                 </div>
-                <h3 className="font-semibold text-foreground mb-1">100% Secure</h3>
-                <p className="text-sm text-muted-foreground">Bank-grade security</p>
+                <h3 className="font-retro text-lg text-foreground mb-1">100% SAFE</h3>
+                <p className="font-retro text-sm text-muted-foreground">BANK GRADE</p>
               </div>
               
-              <div className="text-center">
-                <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-3">
-                  <Star className="w-6 h-6 text-primary" />
+              <div className="p-4 bg-secondary/10 border-2 border-foreground">
+                <div className="w-12 h-12 bg-secondary border-2 border-foreground flex items-center justify-center mx-auto mb-3">
+                  <Star className="w-6 h-6 text-secondary-foreground" />
                 </div>
-                <h3 className="font-semibold text-foreground mb-1">Always Free</h3>
-                <p className="text-sm text-muted-foreground">No hidden charges ever</p>
+                <h3 className="font-retro text-lg text-foreground mb-1">FREE</h3>
+                <p className="font-retro text-sm text-muted-foreground">NO CHARGES</p>
               </div>
             </div>
             
@@ -95,17 +99,23 @@ export const CallToAction = () => {
         
         {/* Social Proof */}
         <div className="text-center mt-12">
-          <p className="text-white/80 mb-4">Trusted by students from</p>
-          <div className="flex flex-wrap justify-center gap-6 text-white/60">
-            <Badge variant="outline" className="border-white/30 text-white/70">IIT Delhi</Badge>
-            <Badge variant="outline" className="border-white/30 text-white/70">DU</Badge>
-            <Badge variant="outline" className="border-white/30 text-white/70">BIT Pilani</Badge>
-            <Badge variant="outline" className="border-white/30 text-white/70">NIT Trichy</Badge>
-            <Badge variant="outline" className="border-white/30 text-white/70">BITS Goa</Badge>
+          <p className="font-retro text-foreground/80 mb-4 text-lg">★ TRUSTED BY STUDENTS FROM ★</p>
+          <div className="flex flex-wrap justify-center gap-3">
+            <Badge className="bg-card border-2 border-foreground text-foreground font-retro text-sm px-4 py-2">IIT DELHI</Badge>
+            <Badge className="bg-card border-2 border-foreground text-foreground font-retro text-sm px-4 py-2">DU</Badge>
+            <Badge className="bg-card border-2 border-foreground text-foreground font-retro text-sm px-4 py-2">BITS PILANI</Badge>
+            <Badge className="bg-card border-2 border-foreground text-foreground font-retro text-sm px-4 py-2">NIT TRICHY</Badge>
+            <Badge className="bg-card border-2 border-foreground text-foreground font-retro text-sm px-4 py-2">BITS GOA</Badge>
           </div>
         </div>
         
       </div>
+
+      {/* Decorative corner elements */}
+      <div className="absolute top-4 left-4 w-8 h-8 bg-primary border-2 border-foreground" />
+      <div className="absolute top-4 right-4 w-8 h-8 bg-secondary border-2 border-foreground" />
+      <div className="absolute bottom-4 left-4 w-8 h-8 bg-success border-2 border-foreground" />
+      <div className="absolute bottom-4 right-4 w-8 h-8 bg-warning border-2 border-foreground" />
     </section>
   );
 };
