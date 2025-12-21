@@ -22,7 +22,7 @@ import {
 
 // Mock data for demonstration
 const mockGroup = {
-  name: "College Squad",
+  name: "COLLEGE SQUAD",
   members: [
     { id: 1, name: "Rahul", balance: 150 },
     { id: 2, name: "Priya", balance: -75 },
@@ -35,33 +35,36 @@ const mockGroup = {
 const mockActivities = [
   {
     id: 1,
-    title: "Movie Night",
+    title: "MOVIE NIGHT",
     amount: 1200,
     paidBy: "Rahul",
     participants: ["Rahul", "Priya", "Amit", "Sneha"],
     type: "entertainment",
-    date: "Today",
-    icon: Popcorn
+    date: "TODAY",
+    icon: Popcorn,
+    emoji: "🎬"
   },
   {
     id: 2,
-    title: "Dinner at Food Court",
+    title: "DINNER",
     amount: 800,
     paidBy: "Sneha",
     participants: ["Rahul", "Priya", "Sneha", "Karan"],
     type: "food",
-    date: "Yesterday",
-    icon: Coffee
+    date: "YESTERDAY",
+    icon: Coffee,
+    emoji: "🍕"
   },
   {
     id: 3,
-    title: "Uber to Mall",
+    title: "UBER RIDE",
     amount: 300,
     paidBy: "Priya",
     participants: ["Priya", "Amit", "Karan"],
     type: "travel",
-    date: "2 days ago",
-    icon: Car
+    date: "2 DAYS AGO",
+    icon: Car,
+    emoji: "🚗"
   }
 ];
 
@@ -69,16 +72,19 @@ export const ExpenseTracker = () => {
   const [activeTab, setActiveTab] = useState("dashboard");
   
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-background pattern-grid">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            See It In <span className="text-primary">Action</span>
+          <div className="inline-block px-6 py-3 bg-secondary border-4 border-foreground shadow-card mb-6">
+            <span className="font-pixel text-secondary-foreground text-sm">★ DEMO ★</span>
+          </div>
+          <h2 className="text-2xl md:text-3xl font-pixel text-foreground mb-6 leading-relaxed">
+            SEE IT IN <span className="text-primary">ACTION</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Experience how simple group expense tracking can be. Here's what your dashboard will look like.
+          <p className="text-xl font-retro text-muted-foreground max-w-2xl mx-auto">
+            EXPERIENCE HOW SIMPLE GROUP EXPENSE TRACKING CAN BE. HERE'S YOUR DASHBOARD PREVIEW.
           </p>
         </div>
         
@@ -86,18 +92,18 @@ export const ExpenseTracker = () => {
         <div className="max-w-4xl mx-auto">
           <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
             
-            <TabsList className="grid w-full grid-cols-3 bg-muted/50">
-              <TabsTrigger value="dashboard" className="flex items-center gap-2">
+            <TabsList className="grid w-full grid-cols-3 bg-muted border-4 border-foreground p-1 gap-1">
+              <TabsTrigger value="dashboard" className="flex items-center gap-2 font-retro text-base data-[state=active]:bg-primary data-[state=active]:text-primary-foreground border-2 border-transparent data-[state=active]:border-foreground">
                 <Users className="w-4 h-4" />
-                Dashboard
+                DASHBOARD
               </TabsTrigger>
-              <TabsTrigger value="add-expense" className="flex items-center gap-2">
+              <TabsTrigger value="add-expense" className="flex items-center gap-2 font-retro text-base data-[state=active]:bg-success data-[state=active]:text-success-foreground border-2 border-transparent data-[state=active]:border-foreground">
                 <Plus className="w-4 h-4" />
-                Add Expense
+                ADD NEW
               </TabsTrigger>
-              <TabsTrigger value="settlements" className="flex items-center gap-2">
+              <TabsTrigger value="settlements" className="flex items-center gap-2 font-retro text-base data-[state=active]:bg-warning data-[state=active]:text-warning-foreground border-2 border-transparent data-[state=active]:border-foreground">
                 <CheckCircle2 className="w-4 h-4" />
-                Settlements
+                SETTLE UP
               </TabsTrigger>
             </TabsList>
             
@@ -105,19 +111,19 @@ export const ExpenseTracker = () => {
             <TabsContent value="dashboard" className="space-y-6">
               
               {/* Group Overview */}
-              <Card className="gradient-card shadow-card">
+              <Card className="bg-card border-4 border-foreground shadow-card">
                 <CardHeader>
                   <div className="flex items-center justify-between">
                     <div>
-                      <CardTitle className="flex items-center gap-2">
-                        <Users className="w-5 h-5 text-primary" />
+                      <CardTitle className="flex items-center gap-2 font-retro text-2xl">
+                        <Users className="w-6 h-6 text-primary" />
                         {mockGroup.name}
                       </CardTitle>
-                      <CardDescription>5 members • 3 recent activities</CardDescription>
+                      <CardDescription className="font-retro text-lg">5 MEMBERS • 3 ACTIVITIES</CardDescription>
                     </div>
-                    <Badge className="badge-success">
+                    <Badge className="font-pixel text-xs bg-success text-success-foreground border-2 border-foreground px-3 py-1">
                       <Trophy className="w-3 h-3 mr-1" />
-                      Active Group
+                      ACTIVE
                     </Badge>
                   </div>
                 </CardHeader>
@@ -125,28 +131,28 @@ export const ExpenseTracker = () => {
               
               {/* Balances */}
               <div className="grid md:grid-cols-2 gap-6">
-                <Card className="shadow-card">
+                <Card className="border-4 border-foreground shadow-card">
                   <CardHeader>
-                    <CardTitle className="text-lg">Group Balances</CardTitle>
-                    <CardDescription>Who owes what to whom</CardDescription>
+                    <CardTitle className="font-retro text-xl">GROUP BALANCES</CardTitle>
+                    <CardDescription className="font-retro">WHO OWES WHAT</CardDescription>
                   </CardHeader>
-                  <CardContent className="space-y-4">
+                  <CardContent className="space-y-3">
                     {mockGroup.members.map(member => (
-                      <div key={member.id} className="flex items-center justify-between">
+                      <div key={member.id} className="flex items-center justify-between p-3 border-2 border-foreground bg-muted/30">
                         <div className="flex items-center gap-3">
-                          <Avatar className="w-8 h-8">
-                            <AvatarFallback>{member.name[0]}</AvatarFallback>
+                          <Avatar className="w-10 h-10 border-2 border-foreground">
+                            <AvatarFallback className="font-pixel text-sm bg-primary text-primary-foreground">{member.name[0]}</AvatarFallback>
                           </Avatar>
-                          <span className="font-medium">{member.name}</span>
+                          <span className="font-retro text-lg">{member.name.toUpperCase()}</span>
                         </div>
-                        <div className={`flex items-center font-semibold ${
+                        <div className={`flex items-center font-retro text-lg ${
                           member.balance > 0 ? 'text-success' : 
                           member.balance < 0 ? 'text-destructive' : 'text-muted-foreground'
                         }`}>
-                          <IndianRupee className="w-3 h-3 mr-1" />
+                          <IndianRupee className="w-4 h-4 mr-1" />
                           {Math.abs(member.balance)}
-                          {member.balance > 0 && <span className="ml-1 text-xs">gets back</span>}
-                          {member.balance < 0 && <span className="ml-1 text-xs">owes</span>}
+                          {member.balance > 0 && <span className="ml-1 text-sm">↑</span>}
+                          {member.balance < 0 && <span className="ml-1 text-sm">↓</span>}
                         </div>
                       </div>
                     ))}
@@ -154,30 +160,30 @@ export const ExpenseTracker = () => {
                 </Card>
                 
                 {/* Recent Activities */}
-                <Card className="shadow-card">
+                <Card className="border-4 border-foreground shadow-card">
                   <CardHeader>
-                    <CardTitle className="text-lg">Recent Activities</CardTitle>
-                    <CardDescription>Latest group expenses</CardDescription>
+                    <CardTitle className="font-retro text-xl">RECENT ACTIVITIES</CardTitle>
+                    <CardDescription className="font-retro">LATEST EXPENSES</CardDescription>
                   </CardHeader>
-                  <CardContent className="space-y-4">
+                  <CardContent className="space-y-3">
                     {mockActivities.map(activity => (
-                      <div key={activity.id} className="flex items-center gap-3 p-3 rounded-lg bg-muted/30">
-                        <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                          <activity.icon className="w-5 h-5 text-primary" />
+                      <div key={activity.id} className="flex items-center gap-3 p-3 border-2 border-foreground bg-muted/30">
+                        <div className="w-12 h-12 bg-primary/20 border-2 border-foreground flex items-center justify-center text-2xl">
+                          {activity.emoji}
                         </div>
                         <div className="flex-1">
-                          <div className="font-medium">{activity.title}</div>
-                          <div className="text-sm text-muted-foreground">
-                            Paid by {activity.paidBy} • {activity.date}
+                          <div className="font-retro text-lg">{activity.title}</div>
+                          <div className="font-retro text-sm text-muted-foreground">
+                            BY {activity.paidBy.toUpperCase()} • {activity.date}
                           </div>
                         </div>
                         <div className="text-right">
-                          <div className="font-semibold flex items-center">
-                            <IndianRupee className="w-3 h-3 mr-1" />
+                          <div className="font-retro text-lg flex items-center text-primary">
+                            <IndianRupee className="w-4 h-4 mr-1" />
                             {activity.amount}
                           </div>
-                          <div className="text-xs text-muted-foreground">
-                            {activity.participants.length} people
+                          <div className="font-retro text-xs text-muted-foreground">
+                            {activity.participants.length} PPL
                           </div>
                         </div>
                       </div>
@@ -189,61 +195,61 @@ export const ExpenseTracker = () => {
             
             {/* Add Expense Tab */}
             <TabsContent value="add-expense" className="space-y-6">
-              <Card className="shadow-card max-w-2xl mx-auto">
+              <Card className="border-4 border-foreground shadow-card max-w-2xl mx-auto">
                 <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <Plus className="w-5 h-5 text-primary" />
-                    Add New Expense
+                  <CardTitle className="flex items-center gap-2 font-retro text-2xl">
+                    <Plus className="w-6 h-6 text-success" />
+                    ADD NEW EXPENSE
                   </CardTitle>
-                  <CardDescription>
-                    Record a new group expense and split it automatically
+                  <CardDescription className="font-retro text-lg">
+                    RECORD & AUTO-SPLIT AMONG FRIENDS
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-6">
                   <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
-                      <Label htmlFor="expense-title">What was it for?</Label>
+                      <Label htmlFor="expense-title" className="font-retro text-base">WHAT FOR?</Label>
                       <Input 
                         id="expense-title"
-                        placeholder="e.g., Lunch at KFC"
-                        className="bg-muted/30"
+                        placeholder="E.G., LUNCH AT KFC"
+                        className="bg-muted/30 border-2 border-foreground font-retro"
                       />
                     </div>
                     <div className="space-y-2">
-                      <Label htmlFor="expense-amount">Amount</Label>
+                      <Label htmlFor="expense-amount" className="font-retro text-base">AMOUNT</Label>
                       <div className="relative">
                         <IndianRupee className="absolute left-3 top-3 w-4 h-4 text-muted-foreground" />
                         <Input 
                           id="expense-amount"
                           placeholder="0.00"
-                          className="pl-10 bg-muted/30"
+                          className="pl-10 bg-muted/30 border-2 border-foreground font-retro"
                         />
                       </div>
                     </div>
                   </div>
                   
-                  <div className="space-y-2">
-                    <Label>Who participated?</Label>
+                  <div className="space-y-3">
+                    <Label className="font-retro text-base">WHO PARTICIPATED?</Label>
                     <div className="grid grid-cols-2 gap-2">
                       {mockGroup.members.map(member => (
-                        <div key={member.id} className="flex items-center space-x-2">
+                        <div key={member.id} className="flex items-center space-x-2 p-3 border-2 border-foreground bg-muted/20 hover:bg-muted/40 cursor-pointer">
                           <input 
                             type="checkbox" 
                             id={`member-${member.id}`}
-                            className="rounded border-muted-foreground"
+                            className="w-5 h-5 border-2 border-foreground accent-primary"
                             defaultChecked={member.id <= 3}
                           />
-                          <label htmlFor={`member-${member.id}`} className="text-sm font-medium">
-                            {member.name}
+                          <label htmlFor={`member-${member.id}`} className="font-retro text-base cursor-pointer">
+                            {member.name.toUpperCase()}
                           </label>
                         </div>
                       ))}
                     </div>
                   </div>
                   
-                  <Button className="w-full gradient-primary hover-lift">
-                    <Calculator className="w-4 h-4 mr-2" />
-                    Split & Add Expense
+                  <Button className="w-full gradient-success border-4 border-foreground shadow-card hover-lift font-retro text-lg py-6">
+                    <Calculator className="w-5 h-5 mr-2" />
+                    SPLIT & ADD EXPENSE
                   </Button>
                 </CardContent>
               </Card>
@@ -254,78 +260,78 @@ export const ExpenseTracker = () => {
               <div className="grid md:grid-cols-2 gap-6">
                 
                 {/* Pending Settlements */}
-                <Card className="shadow-card">
+                <Card className="border-4 border-foreground shadow-card">
                   <CardHeader>
-                    <CardTitle className="flex items-center gap-2 text-warning">
-                      <AlertCircle className="w-5 h-5" />
-                      Pending Settlements
+                    <CardTitle className="flex items-center gap-2 text-warning font-retro text-xl">
+                      <AlertCircle className="w-6 h-6" />
+                      PENDING
                     </CardTitle>
-                    <CardDescription>Outstanding payments in your group</CardDescription>
+                    <CardDescription className="font-retro">PAYMENTS DUE</CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-4">
-                    <div className="p-4 bg-warning-light rounded-lg">
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="font-medium">Priya → Rahul</span>
-                        <span className="font-semibold flex items-center">
-                          <IndianRupee className="w-3 h-3 mr-1" />
+                    <div className="p-4 bg-warning/20 border-2 border-foreground">
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="font-retro text-lg">PRIYA → RAHUL</span>
+                        <span className="font-retro text-lg flex items-center text-warning">
+                          <IndianRupee className="w-4 h-4 mr-1" />
                           75
                         </span>
                       </div>
-                      <Button size="sm" className="w-full gradient-success">
-                        Pay via UPI
+                      <Button size="sm" className="w-full gradient-success border-2 border-foreground font-retro">
+                        PAY VIA UPI
                       </Button>
                     </div>
                     
-                    <div className="p-4 bg-warning-light rounded-lg">
-                      <div className="flex items-center justify-between mb-2">
-                        <span className="font-medium">Karan → Rahul</span>
-                        <span className="font-semibold flex items-center">
-                          <IndianRupee className="w-3 h-3 mr-1" />
+                    <div className="p-4 bg-warning/20 border-2 border-foreground">
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="font-retro text-lg">KARAN → RAHUL</span>
+                        <span className="font-retro text-lg flex items-center text-warning">
+                          <IndianRupee className="w-4 h-4 mr-1" />
                           100
                         </span>
                       </div>
-                      <Button size="sm" className="w-full gradient-success">
-                        Pay via UPI
+                      <Button size="sm" className="w-full gradient-success border-2 border-foreground font-retro">
+                        PAY VIA UPI
                       </Button>
                     </div>
                   </CardContent>
                 </Card>
                 
                 {/* Settlement History */}
-                <Card className="shadow-card">
+                <Card className="border-4 border-foreground shadow-card">
                   <CardHeader>
-                    <CardTitle className="flex items-center gap-2 text-success">
-                      <CheckCircle2 className="w-5 h-5" />
-                      Recent Settlements
+                    <CardTitle className="flex items-center gap-2 text-success font-retro text-xl">
+                      <CheckCircle2 className="w-6 h-6" />
+                      COMPLETED
                     </CardTitle>
-                    <CardDescription>Completed payments</CardDescription>
+                    <CardDescription className="font-retro">PAID UP</CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-4">
-                    <div className="flex items-center justify-between p-3 bg-success-light rounded-lg">
+                    <div className="flex items-center justify-between p-4 bg-success/20 border-2 border-foreground">
                       <div>
-                        <div className="font-medium">Amit → Sneha</div>
-                        <div className="text-sm text-muted-foreground flex items-center">
+                        <div className="font-retro text-lg">AMIT → SNEHA</div>
+                        <div className="font-retro text-sm text-muted-foreground flex items-center">
                           <Clock className="w-3 h-3 mr-1" />
-                          2 hours ago
+                          2 HOURS AGO
                         </div>
                       </div>
-                      <div className="font-semibold text-success flex items-center">
-                        <IndianRupee className="w-3 h-3 mr-1" />
-                        25
+                      <div className="font-retro text-lg text-success flex items-center">
+                        <IndianRupee className="w-4 h-4 mr-1" />
+                        25 ✓
                       </div>
                     </div>
                     
-                    <div className="flex items-center justify-between p-3 bg-success-light rounded-lg">
+                    <div className="flex items-center justify-between p-4 bg-success/20 border-2 border-foreground">
                       <div>
-                        <div className="font-medium">Sneha → Priya</div>
-                        <div className="text-sm text-muted-foreground flex items-center">
+                        <div className="font-retro text-lg">SNEHA → PRIYA</div>
+                        <div className="font-retro text-sm text-muted-foreground flex items-center">
                           <Clock className="w-3 h-3 mr-1" />
-                          Yesterday
+                          YESTERDAY
                         </div>
                       </div>
-                      <div className="font-semibold text-success flex items-center">
-                        <IndianRupee className="w-3 h-3 mr-1" />
-                        150
+                      <div className="font-retro text-lg text-success flex items-center">
+                        <IndianRupee className="w-4 h-4 mr-1" />
+                        150 ✓
                       </div>
                     </div>
                   </CardContent>
