@@ -89,5 +89,3 @@ Contributions are welcome!
 This project is open-source and available under the **MIT License**.  
 
 ---
-
-Would you like me to also **add screenshots or usage examples** (like a sample expense split workflow) to make the README more engaging for new users?
